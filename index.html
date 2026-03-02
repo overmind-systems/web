@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVERMIND Systems | Intelligent Defense</title>
+    <title>OVERMIND Systems — Офіційна сторінка</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Base Theme Settings */
-        :root 
-        {
-            --bg-color: #0a0a0b;
-            --surface-color: #16161a;
-            --accent-color: #00f2ff;
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --border-color: #27272a;
-        }
-
+        /* Global Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,333 +17,538 @@
 
         body 
         {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Container for content limiting */
+        /* Container for centralizing content */
         .container 
         {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
-        /* Header Section Style */
-        header 
+        /* Typography Helper Classes */
+        h1, h2, h3 
         {
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            color: #0f172a;
+            line-height: 1.2;
         }
 
-        .logo-title 
+        .section-padding 
+        {
+            padding: 100px 0;
+        }
+
+        /* Navigation / Page 0: Logo and Tagline */
+        .hero-section 
+        {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .main-logo 
         {
             font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            color: var(--accent-color);
+            letter-spacing: -0.05em;
+            color: #2563eb;
             margin-bottom: 10px;
         }
 
-        .logo-subtitle 
+        .full-name-acronym 
         {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .tagline 
+        {
+            font-size: 1.5rem;
+            color: #475569;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Section Layouts */
-        section 
+        /* Page 1: Vision Section */
+        .vision-section 
         {
-            padding: 100px 0;
-            border-bottom: 1px solid var(--border-color);
+            background-color: #ffffff;
         }
 
-        h2 
+        .vision-intro 
         {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #1e40af;
         }
 
-        /* Vision Cards Grid */
-        .grid-4 
+        .vision-grid 
         {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card 
-        {
-            background: var(--surface-color);
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            transition: border-color 0.3s ease;
-        }
-
-        .card:hover 
-        {
-            border-color: var(--accent-color);
-        }
-
-        .card h3 
-        {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .card p 
-        {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Problem Section Styling */
-        .problem-list 
-        {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
-        .problem-item 
+        .vision-card 
         {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            background: #f1f5f9;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
         }
 
-        .problem-number 
+        .vision-card h3 
         {
-            color: var(--accent-color);
-            font-weight: 800;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
-        /* Architecture Section Styling */
-        .arch-block 
+        /* Page 2: Problems Section */
+        .problems-section 
         {
-            margin-bottom: 40px;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .problems-section h2 
+        {
+            color: #ffffff;
+            margin-bottom: 60px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .problem-block 
+        {
+            margin-bottom: 60px;
+        }
+
+        .problem-category 
+        {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            border-left: 4px solid #38bdf8;
             padding-left: 20px;
-            border-left: 2px solid var(--accent-color);
         }
 
-        .tech-spec 
+        .problem-detail 
         {
-            font-family: monospace;
-            background: #000;
-            padding: 5px 10px;
-            color: var(--accent-color);
-            display: inline-block;
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .problem-detail h4 
+        {
+            color: #f1f5f9;
+            font-size: 1.2rem;
             margin-bottom: 10px;
         }
 
-        /* Roadmap Timeline */
-        .roadmap-step 
+        .problem-detail p 
+        {
+            color: #94a3b8;
+        }
+
+        /* Page 3: Architecture Section */
+        .architecture-section 
+        {
+            background-color: #ffffff;
+        }
+
+        .tech-item 
+        {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 80px;
+            align-items: flex-start;
+        }
+
+        .tech-content 
+        {
+            flex: 1;
+        }
+
+        .tech-label 
+        {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-title 
+        {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .tech-list 
+        {
+            list-style: none;
+        }
+
+        .tech-list li 
+        {
+            margin-bottom: 10px;
+        }
+
+        .tech-list strong 
+        {
+            color: #2563eb;
+        }
+
+        /* Page 4: Scenarios Section */
+        .scenarios-section 
+        {
+            background-color: #f8fafc;
+        }
+
+        .scenario-grid 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .scenario-card 
+        {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .scenario-card h3 
+        {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .scenario-result 
+        {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0fdf4;
+            border-radius: 8px;
+            color: #166534;
+            font-weight: 600;
+        }
+
+        /* Page 5: Economics Section */
+        .economics-section 
+        {
+            background-color: #ffffff;
+        }
+
+        .economics-grid 
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .eco-card 
+        {
+            border: 1px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .eco-card h3 
+        {
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        /* Page 6: Roadmap Section */
+        .roadmap-section 
+        {
+            background-color: #f1f5f9;
+        }
+
+        .roadmap-container 
         {
             position: relative;
-            padding-bottom: 40px;
-            padding-left: 30px;
-            border-left: 1px solid var(--border-color);
+            padding-left: 40px;
         }
 
-        .roadmap-step::before 
+        .roadmap-item 
         {
-            content: '';
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .roadmap-item::before 
+        {
+            content: "";
             position: absolute;
-            left: -5px;
-            top: 0;
-            width: 9px;
-            height: 9px;
-            background: var(--accent-color);
+            left: -46px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
             border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 0 4px #dbeafe;
         }
 
-        /* Contact Footer Styling */
-        .footer 
+        /* Page 7: Contact Footer */
+        .contact-section 
         {
-            padding: 60px 0;
-            background: var(--surface-color);
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 120px 0;
             text-align: center;
         }
 
-        .contact-links 
+        .contact-info 
         {
+            margin-top: 40px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.25rem;
         }
 
-        .contact-links a 
+        .contact-info a 
         {
-            color: var(--text-primary);
+            color: #38bdf8;
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid var(--accent-color);
         }
 
-        .contact-links a:hover 
+        .contact-info a:hover 
         {
-            color: var(--accent-color);
+            text-decoration: underline;
         }
 
+        /* Responsive adjustments */
         @media (max-width: 768px) 
         {
-            .logo-title { font-size: 2.5rem; }
+            .economics-grid { grid-template-columns: 1fr; }
+            .main-logo { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="hero-section">
         <div class="container">
-            <div class="logo-title">OVERMIND Systems</div>
-            <p class="logo-subtitle">
-                Optical Visual Environment Reconnaissance & Multi-node Intelligence Network Distribution
-            </p>
+            <div class="main-logo">OVERMIND Systems</div>
+            <div class="full-name-acronym">Optical Visual Environment Reconnaissance & Multi-node Intelligence Network Distribution</div>
+            <p class="tagline">Система оптичної візуальної розвідки середовища та дистрибуції інтелекту в багатоузловій мережі</p>
         </div>
     </header>
 
-    <section id="vision">
+    <section class="vision-section section-padding">
         <div class="container">
-            <h2>Візія продукту</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 800px;">
-                Технологічний апгрейд бронетехніки, що перетворює її на активний інтелектуальний вузол з автономним динамічним самозахистом.
-            </p>
-            <div class="grid-4">
-                <div class="card">
+            <p class="vision-intro">Технологічний апгрейд бронетехніки, що перетворює її на активний інтелектуальний вузол для автономного динамічного самозахисту.</p>
+            <div class="vision-grid">
+                <div class="vision-card">
                     <h3>Централізований інтелект</h3>
-                    <p>Єдине потужне ядро для керування всіма юнітами. Якість аналітики вища за будь-який бортовий ШІ дронів.</p>
+                    <p>Єдине обчислювальне ядро для керування всіма юнітами. Якість аналітики вища за будь-який бортовий ШІ окремих дронів.</p>
                 </div>
-                <div class="card">
+                <div class="vision-card">
                     <h3>Інтелектуальна мережа</h3>
-                    <p>Синхронізація тактичної обстановки між усіма учасниками бойової групи на чолі з технікою.</p>
+                    <p>Миттєва синхронізація тактичної обстановки між усіма учасниками бойової групи на чолі з технікою.</p>
                 </div>
-                <div class="card">
+                <div class="vision-card">
                     <h3>Візуальна обізнаність</h3>
-                    <p>Ліквідація «сліпих зон» та виявлення загроз на дистанціях, недоступних екіпажу.</p>
+                    <p>Ліквідація «сліпих зон» та виявлення загроз за межами фізичної броні на недоступних раніше дистанціях.</p>
                 </div>
-                <div class="card">
+                <div class="vision-card">
                     <h3>Динамічний щит</h3>
-                    <p>Автоматична нейтралізація ворожих об'єктів через систему дешевих дронів-перехоплювачів.</p>
+                    <p>Автоматична нейтралізація ворожих дронів через систему дешевих перехоплювачів під повним контролем ядра.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="problem">
+    <section class="problems-section section-padding">
         <div class="container">
-            <h2>Проблема</h2>
-            <div class="problem-list">
-                <div class="problem-item">
-                    <span class="problem-number">01</span>
-                    <div>
-                        <h3>Криза захисту</h3>
-                        <p>Пасивна броня та РЕБ безсилі проти дронів на оптоволокні чи з автономним машинним зором.</p>
-                    </div>
-                </div>
-                <div class="problem-item">
-                    <span class="problem-number">02</span>
-                    <div>
-                        <h3>Інформаційна сліпота</h3>
-                        <p>Більшість атак здійснюються у «мертві зони» (верхня півсфера), які екіпаж не контролює фізично.</p>
-                    </div>
-                </div>
-                <div class="problem-item">
-                    <span class="problem-number">03</span>
-                    <div>
-                        <h3>Фізіологічний бар'єр</h3>
-                        <p>Швидкість атаки 150 км/год перевищує швидкість людської реакції.</p>
-                    </div>
-                </div>
-                <div class="problem-item">
-                    <span class="problem-number">04</span>
-                    <div>
-                        <h3>Економічний дисбаланс</h3>
-                        <p>Машина за $10M знищується засобом за $3,000. Це робить використання важкої техніки неефективним.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="architecture">
-        <div class="container">
-            <h2>Технічна архітектура (Decoupling)</h2>
+            <h2>Проблема сучасної війни</h2>
             
-            <div class="arch-block">
-                <span class="tech-spec">NEXUS SERVER CORE</span>
-                <h3>Серверне ядро (AMD EPYC + GPU)</h3>
-                <p>Локальний Edge-сервер всередині броні. Обробляє понад 50 потоків даних, виконуючи важкі нейромережі для детекції та координації рою.</p>
+            <div class="problem-block">
+                <div class="problem-category">Криза існуючих систем захисту</div>
+                <div class="problem-detail">
+                    <h4>Пасивна вразливість</h4>
+                    <p>«Мангали» та динамічна броня не захищають від послідовних атак та ударів у вразливі зони.</p>
+                </div>
+                <div class="problem-detail">
+                    <h4>Обмеженість РЕБ</h4>
+                    <p>Традиційний захист безсилий проти дронів на оптоволокні чи з автономним машинним зором.</p>
+                </div>
             </div>
 
-            <div class="arch-block">
-                <span class="tech-spec">MASTER EYE NODE</span>
-                <h3>Дрон-обсервер на дроті</h3>
-                <p>З'єднання через гібридний кабель (оптика + живлення). 100% стійкість до РЕБ, нульове радіовипромінювання та передача RAW відео.</p>
+            <div class="problem-block">
+                <div class="problem-category">Інформаційна сліпота</div>
+                <div class="problem-detail">
+                    <h4>Сліпі зони</h4>
+                    <p>Екіпаж не контролює верхню півсферу та тил через конструктивні обмеження броні.</p>
+                </div>
+                <div class="problem-detail">
+                    <h4>Ефект раптовості</h4>
+                    <p>Відсутність системи раннього виявлення не залишає часу на маневр до моменту вибуху.</p>
+                </div>
             </div>
 
-            <div class="arch-block">
-                <span class="tech-spec">TACTICAL AURA</span>
-                <h3>Мережа Wi-Fi 7</h3>
-                <p>Локальний купол зв’язку із затримкою менше 5 мс. Дозволяє керувати перехоплювачами так само швидко, як по дроту.</p>
-            </div>
-
-            <div class="arch-block">
-                <span class="tech-spec">SATELLITE UNITS</span>
-                <h3>Дешеві дрони-перехоплювачі</h3>
-                <p>Максимально спрощені «жати» без власної електроніки. Весь інтелект винесений у Nexus. Вартість: $500 – $800.</p>
+            <div class="problem-block">
+                <div class="problem-category">Фізіологічний бар'єр</div>
+                <div class="problem-detail">
+                    <h4>Швидкість загрози</h4>
+                    <p>FPV-дрон на швидкості 150 км/год долає дистанцію швидше за реакцію людини.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="roadmap">
+    <section class="architecture-section section-padding">
         <div class="container">
-            <h2>План реалізації (Рік 1)</h2>
-            <div class="roadmap-step">
-                <h3>Етап 1: Фундамент</h3>
-                <p>Збірка ядра на серверних компонентах та налаштування мережі Wi-Fi 7 з наднизькою затримкою.</p>
+            <h2 style="margin-bottom: 60px;">Технічна архітектура (Decoupling)</h2>
+
+            <div class="tech-item">
+                <div class="tech-content">
+                    <span class="tech-label">HARDWARE CORE</span>
+                    <h3 class="tech-title">Серверне ядро Nexus</h3>
+                    <ul class="tech-list">
+                        <li><strong>Платформа:</strong> AMD EPYC + NVIDIA GPU всередині броні.</li>
+                        <li><strong>Функція:</strong> Обробка 50+ потоків даних у реальному часі.</li>
+                        <li><strong>Перевага:</strong> Запуск важких нейромереж, неможливих на борту малих дронів.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="roadmap-step">
-                <h3>Етап 2: Хребет керування</h3>
-                <p>Перенесення логіки польоту та стабілізації з дрона в центральний сервер. Тести «віртуального повідка».</p>
+
+            <div class="tech-item">
+                <div class="tech-content">
+                    <span class="tech-label">OPTIC LINK</span>
+                    <h3 class="tech-title">Дрон-обсервер Master Eye</h3>
+                    <ul class="tech-list">
+                        <li><strong>Зв'язок:</strong> Гібридний кабель (оптика + живлення).</li>
+                        <li><strong>Надійність:</strong> 100% стійкість до РЕБ та нульове радіовипромінювання.</li>
+                        <li><strong>Роль:</strong> Джерело RAW-даних для кругового огляду 360°.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="roadmap-step">
-                <h3>Етап 3: Візуальний потік</h3>
-                <p>Стабільна трансляція відеопотоку в ядро та вивід тактичних даних на пристрої десанту.</p>
+
+            <div class="tech-item">
+                <div class="tech-content">
+                    <span class="tech-label">COMMUNICATION</span>
+                    <h3 class="tech-title">Мережа Wi-Fi 7</h3>
+                    <ul class="tech-list">
+                        <li><strong>Технологія:</strong> Купол зв'язку радіусом до 250 метрів.</li>
+                        <li><strong>Параметри:</strong> Затримка менше 5 мс завдяки стандарту MLO.</li>
+                        <li><strong>Результат:</strong> Керування сателітами так само швидко, як по дроту.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="roadmap-step">
-                <h3>Етап 4: Інтелектуальний шар</h3>
-                <p>Впровадження алгоритмів розпізнавання об'єктів та фінальна демонстрація автономного коригування польоту.</p>
+            
+        </div>
+    </section>
+
+    <section class="scenarios-section section-padding">
+        <div class="container">
+            <h2 style="margin-bottom: 60px; text-align: center;">Сценарії використання</h2>
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <h3>1. Кінетичний щит (Перехоплення FPV)</h3>
+                    <p>Master Eye виявляє загрозу на дистанції 500м. Nexus розраховує точку зустрічі та автоматично запускає перехоплювач для тарану за межами зони ураження машини.</p>
+                    <div class="scenario-result">Результат: Машина неушкоджена. Економія: $1M – $15M.</div>
+                </div>
+                <div class="scenario-card">
+                    <h3>2. Тактичний хаб (Підтримка десанту)</h3>
+                    <p>Створення інтелектуальної аури навколо техніки. Бійці отримують стрім із Master Eye на планшети з підсвіткою ворожих позицій та засад у реальному часі.</p>
+                    <div class="scenario-result">Результат: Повна тактична обізнаність підрозділу.</div>
+                </div>
+                <div class="scenario-card">
+                    <h3>3. Безпека маршруту (Мінна загроза)</h3>
+                    <p>Попереду техніки летить малий дрон-сканер. Ші аналізує ґрунт на наявність мін та розтяжок, автоматично сигналізуючи водію про небезпеку.</p>
+                    <div class="scenario-result">Результат: Зниження ризику підриву на 80%.</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <section class="economics-section section-padding">
         <div class="container">
-            <h2>Контакти</h2>
-            <p style="font-size: 1.5rem; font-weight: 600;">Мирослав Кравчук</p>
-            <p style="color: var(--text-secondary);">Founder / Chief Architect</p>
-            <div class="contact-links">
-                <a href="mailto:contact@overmind.systems">contact@overmind.systems</a>
-                <a href="https://t.me/mklviv">Telegram: @mklviv</a>
-                <a href="tel:+380687412210">+380 68 741 22 10</a>
-                <a href="https://github.com/overmind-systems">GitHub</a>
-                <a href="https://www.linkedin.com/in/myroslav-kravchuk-7a40883">LinkedIn</a>
+            <h2 style="margin-bottom: 60px;">Економічна доцільність</h2>
+            <div class="economics-grid">
+                <div class="eco-card">
+                    <h3>Пряма окупність</h3>
+                    <p>Один успішний захист техніки окупає встановлення системи на цілу роту бронетехніки.</p>
+                </div>
+                <div class="eco-card">
+                    <h3>Людський капітал</h3>
+                    <p>Радикальне зниження безповоротних втрат досвідченого та високовартісного екіпажу.</p>
+                </div>
+                <div class="eco-card">
+                    <h3>Cost-per-Action</h3>
+                    <p>Наш перехоплювач ($800) — найдешевший спосіб фізичного знищення повітряної загрози.</p>
+                </div>
+                <div class="eco-card">
+                    <h3>Модернізація</h3>
+                    <p>Швидкий інтелектуальний апгрейд застарілого парку машин до рівня сучасної війни.</p>
+                </div>
             </div>
-            <p style="margin-top: 50px; font-size: 0.8rem; color: #444;">&copy; 2026 OVERMIND Systems. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section class="roadmap-section section-padding">
+        <div class="container">
+            <h2 style="margin-bottom: 60px;">План розробки прототипу (Рік 1)</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-item">
+                    <h3>Етап 1: Фундамент</h3>
+                    <p>Збірка ядра Nexus, налаштування мережі Wi-Fi 7 та протоколу передачі команд у реальному часі.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>Етап 2: Хребет системи</h3>
+                    <p>Винесення стабілізації польоту в ядро. Тести автономного утримання позиції навколо бази.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>Етап 3: Візуальний зворотний зв'язок</h3>
+                    <p>Трансляція RAW-відео в ядро, створення інтерфейсу десанту та перевірка стійкості каналу в русі.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3>Етап 4: Інтелектуальний шар</h3>
+                    <p>Впровадження алгоритмів детекції об'єктів та фінальна демонстрація автономного коригування польоту.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-section">
+        <div class="container">
+            <h2>Контакти та співпраця</h2>
+            <div class="contact-info">
+                <p><strong>Мирослав Кравчук</strong> — Founder / Chief Architect</p>
+                <p>Email: <a href="mailto:contact@overmind.systems">contact@overmind.systems</a></p>
+                <p>Telegram: <a href="https://t.me/mklviv">@mklviv</a></p>
+                <p>Тел: +380 68 741 22 10</p>
+                <p>GitHub: <a href="https://github.com/overmind-systems">overmind-systems</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/myroslav-kravchuk-7a40883">Профіль LinkedIn</a></p>
+            </div>
         </div>
     </footer>
 
