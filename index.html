@@ -3,146 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OVERMIND Systems | Tactical Nexus</title>
+    <title>OVERMIND Systems | Intelligent Defense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Base tactical UI styling */
+        /* Base Theme Settings */
+        :root 
+        {
+            --bg-color: #0a0a0b;
+            --surface-color: #16161a;
+            --accent-color: #00f2ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body 
         {
-            background-color: #080808;
-            color: #00ff41;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Main tactical container */
-        .nexus-core 
+        /* Container for content limiting */
+        .container 
         {
-            max-width: 800px;
-            width: 100%;
-            border: 1px solid #1a1a1a;
-            padding: 30px;
-            background: rgba(10, 10, 10, 0.9);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.05);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Header logic for identification */
+        /* Header Section Style */
         header 
         {
-            border-bottom: 2px solid #00ff41;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-title 
+        {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .logo-subtitle 
+        {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section Layouts */
+        section 
+        {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 
+        {
+            font-size: 2rem;
             margin-bottom: 40px;
-            padding-bottom: 10px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        h1 
-        {
-            font-size: 2.2rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        /* System status indicators */
-        .status-line 
-        {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        /* Grid for technical specifications */
-        .tech-grid 
+        /* Vision Cards Grid */
+        .grid-4 
         {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
-        .module 
+        .card 
         {
-            border-left: 3px solid #333;
-            padding-left: 15px;
+            background: var(--surface-color);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
         }
 
-        .module h3 
+        .card:hover 
         {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-            text-transform: uppercase;
+            border-color: var(--accent-color);
         }
 
-        .module p 
+        .card h3 
         {
-            color: #888;
-            font-size: 0.9rem;
-            margin: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
 
-        /* Action zone for contacts */
-        .uplink 
+        .card p 
         {
-            margin-top: 60px;
-            padding: 20px;
-            border: 1px dashed #333;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Problem Section Styling */
+        .problem-list 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .problem-item 
+        {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .problem-number 
+        {
+            color: var(--accent-color);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        /* Architecture Section Styling */
+        .arch-block 
+        {
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        .tech-spec 
+        {
+            font-family: monospace;
+            background: #000;
+            padding: 5px 10px;
+            color: var(--accent-color);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Roadmap Timeline */
+        .roadmap-step 
+        {
+            position: relative;
+            padding-bottom: 40px;
+            padding-left: 30px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .roadmap-step::before 
+        {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 9px;
+            height: 9px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        /* Contact Footer Styling */
+        .footer 
+        {
+            padding: 60px 0;
+            background: var(--surface-color);
             text-align: center;
         }
 
-        a 
+        .contact-links 
         {
-            color: #00ff41;
-            text-decoration: none;
-            font-weight: bold;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        a:hover 
+        .contact-links a 
         {
-            background: #00ff41;
-            color: #000;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .contact-links a:hover 
+        {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) 
+        {
+            .logo-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="nexus-core">
     <header>
-        <h1>OVERMIND SYSTEMS</h1>
-        <div class="status-line">SYSTEM STATUS: OPERATIONAL | ENCRYPTION: ACTIVE</div>
+        <div class="container">
+            <div class="logo-title">OVERMIND Systems</div>
+            <p class="logo-subtitle">
+                Optical Visual Environment Reconnaissance & Multi-node Intelligence Network Distribution
+            </p>
+        </div>
     </header>
 
-    <section>
-        <p>> Initializing tactical awareness aura...</p>
-        <p>OVERMIND — це розподілена тактична мережа для повної синхронізації поля бою. Ми перетворюємо дані на домінування.</p>
+    <section id="vision">
+        <div class="container">
+            <h2>Візія продукту</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 800px;">
+                Технологічний апгрейд бронетехніки, що перетворює її на активний інтелектуальний вузол з автономним динамічним самозахистом.
+            </p>
+            <div class="grid-4">
+                <div class="card">
+                    <h3>Централізований інтелект</h3>
+                    <p>Єдине потужне ядро для керування всіма юнітами. Якість аналітики вища за будь-який бортовий ШІ дронів.</p>
+                </div>
+                <div class="card">
+                    <h3>Інтелектуальна мережа</h3>
+                    <p>Синхронізація тактичної обстановки між усіма учасниками бойової групи на чолі з технікою.</p>
+                </div>
+                <div class="card">
+                    <h3>Візуальна обізнаність</h3>
+                    <p>Ліквідація «сліпих зон» та виявлення загроз на дистанціях, недоступних екіпажу.</p>
+                </div>
+                <div class="card">
+                    <h3>Динамічний щит</h3>
+                    <p>Автоматична нейтралізація ворожих об'єктів через систему дешевих дронів-перехоплювачів.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <div class="tech-grid">
-        <div class="module">
-            <h3>The Nexus</h3>
-            <p>Центральне ядро на базі AMD EPYC. Обробка 100+ відеопотоків у реальному часі.</p>
+    <section id="problem">
+        <div class="container">
+            <h2>Проблема</h2>
+            <div class="problem-list">
+                <div class="problem-item">
+                    <span class="problem-number">01</span>
+                    <div>
+                        <h3>Криза захисту</h3>
+                        <p>Пасивна броня та РЕБ безсилі проти дронів на оптоволокні чи з автономним машинним зором.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-number">02</span>
+                    <div>
+                        <h3>Інформаційна сліпота</h3>
+                        <p>Більшість атак здійснюються у «мертві зони» (верхня півсфера), які екіпаж не контролює фізично.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-number">03</span>
+                    <div>
+                        <h3>Фізіологічний бар'єр</h3>
+                        <p>Швидкість атаки 150 км/год перевищує швидкість людської реакції.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-number">04</span>
+                    <div>
+                        <h3>Економічний дисбаланс</h3>
+                        <p>Машина за $10M знищується засобом за $3,000. Це робить використання важкої техніки неефективним.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="module">
-            <h3>The Axons</h3>
-            <p>Оптоволоконна шина. Повна невидимість для РЕБ та нульове випромінювання.</p>
-        </div>
-        <div class="module">
-            <h3>Perception</h3>
-            <p>Оптичні вузли з Wi-Fi 7. Створення локальної зони інтелекту для підрозділів.</p>
-        </div>
-        <div class="module">
-            <h3>Sync Logic</h3>
-            <p>Алгоритми синхронізації в стилі RTS. Кожна одиниця бачить спільну ціль миттєво.</p>
-        </div>
-    </div>
+    </section>
 
-    <div class="uplink">
-        ESTABLISH UPLINK: <a href="mailto:contact@overmind.systems">contact@overmind.systems</a>
-    </div>
-
-    <footer style="margin-top: 40px; font-size: 0.7rem; color: #333;">
-        &copy; 2026 OVERMIND. SYSTEMS_PROJECTION_V1.0
-    </footer>
-</div>
-
-</body>
-</html>
+    <section id="architecture">
+        <div class="container">
+            <h2>Технічна архітектура (Decoupling)</h2>
+            
+            <div class="arch-block">
+                <span class="tech-spec">NEXUS SERVER CORE</span>
+                <h3>Серверне ядро (AMD EPYC + GPU)</h3>
+                <p>Локальний Edge-сервер всередині броні. Обробляє понад 50 потоків даних, виконуючи важкі нейромережі для детекції та
